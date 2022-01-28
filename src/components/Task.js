@@ -7,8 +7,10 @@ class Task extends React.Component {
         }
     
         return (
-            <div onClick={handleClick} className={`task${this.props.task.completed ? ' completed' : ''}`}>
-                <p>{this.props.task.task}</p>
+            <div onClick={handleClick} id='task-item' className={`task${this.props.task.completed ? ' completed' : ''}`}>
+                <ul>
+                    <li>{this.props.task.task}</li>
+                </ul>
             </div>
         )
     }

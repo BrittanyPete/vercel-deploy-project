@@ -23,15 +23,15 @@ class AddItem extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className='add'>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Task</label>
+                    <label>New Task:</label>
                     <input 
                     onChange={this.handleChange}
                     name='task'
                     type='text'
                     />
-                    <button>Add</button>
+                    <button>Add Task</button>
                 </form>
             </div>
         )

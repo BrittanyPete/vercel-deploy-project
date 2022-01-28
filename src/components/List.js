@@ -24,11 +24,11 @@ class List extends React.Component {
         };
     }
 
-    handleClearFinished = () => {
+    handleClearCompleted = () => {
         this.setState({
           ...this.state,
-          toDoList: this.state.toDoList.filter(item => {
-            return !item.completed;
+          list: this.state.list.filter(task => {
+            return !task.completed;
           })
         });
       }
@@ -64,11 +64,14 @@ class List extends React.Component {
     render() {
 
     return (
-        <div>
-            <h2>My List:</h2>
+        <div className='list'>
+            
             <AddItem handleAdd={this.handleAdd} />
-            <MyList list={this.state.list} handleToggleTask={this.state.handleToggleTask} />
-            {/* <button onClick={this.handleClearFinished} className='clear-btn'>Clear Finished</button> */}
+            <div id='my-list'>
+            <h2>My List:</h2>
+            <MyList list={this.state.list} handleToggleTask={this.handleToggleTask} />
+            <button onClick={this.handleClearCompleted} className='clear-btn'>Clear Finished</button>
+            </div>
         </div>
     )
 }

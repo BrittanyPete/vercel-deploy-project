@@ -7,7 +7,7 @@ class MyList extends React.Component {
 
 render() {
     return (
-        <div>
+        <div className='myList'>
             {
                 this.props.list.map(task => {
                     return <Task handleToggleTask={this.props.handleToggleTask} key={task.id} task={task} />
