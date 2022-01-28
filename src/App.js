@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import './index.css'
 
-function App() {
+
+import Header from './components/Header';
+import Home from './components/Home';
+import List from './components/List';
+import MyList from './components/List';
+import AddItem from './components/AddItem';
+
+
+const App = () => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+
+      <div>
+        <Switch>
+
+        <Route path='/add'>
+          <AddItem />
+        </Route>
+
+        <Route path='/my-list'>
+          <MyList/>
+        </Route>
+
+        <Route path='/list'>
+          <List/>
+        </Route>
+
+        <Route path='/home'>
+          <Home />
+        </Route>
+
+        <Route path='/'>
+          <Redirect to='/home'/>
+        </Route>
+
+        </Switch>
+      
+
+      </div>
     </div>
   );
 }
