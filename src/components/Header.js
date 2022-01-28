@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-      <div>
-          <div>
+      <div className='header'>
+          <div className='header-one'>
         <h1>Create Your Lists!</h1>
         </div>
-        <div>
-            <Link to='/home'>Home</Link>
-            <Link to='/list'>My List</Link>
+        <div className='links'>
+            <Link to='/home' className='link'>Home</Link>
+            <Link to='/list' className='link'>My List</Link>
         </div>
       </div>
     );

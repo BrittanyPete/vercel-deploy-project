@@ -1,14 +1,115 @@
 html, body, #root {
   margin: 0px;
   height: 100%;
-  background: #eeeeee;
+  background: #a54949;
   font-family: Lato;
+  color: white;
 }
 
-.item.completed {
-  text-decoration: line-through;
+.header {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.header-one {
+  width: 50%;
+  margin: auto 10%;
+  font-size: 2rem;
+}
+
+.links {
+  width: 50%;
+  text-align: end;
+  margin: auto 10%;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  border: 1px solid rgb(3, 3, 58);
+  background-color:rgb(3, 3, 58);
+  margin: 1%;
+  padding: 10px;
+}
+.link:hover {
+  font-size: 1.8rem;
 }
 
 .task.completed {
   text-decoration: line-through;
+}
+
+.home {
+  text-align: center;
+}
+
+.add {
+  display: flex;
+  font-size: 2rem;
+}
+
+form {
+  width: 100%;
+}
+
+button {
+  font-size: 1.4rem;
+  padding: 8px;
+  background-color: rgb(3, 3, 58);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(3, 3, 58);
+  border-radius: 10px;
+  margin: 2%;
+  width: 20%;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+input {
+  height: 5vh;
+  width: 30%;
+  font-size: 1.4rem;
+}
+
+label {
+  margin-right: 2%;
+  font-weight: 600;
+}
+
+.list {
+  width: 50%;
+  margin-left: 25%;
+}
+
+#my-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid rgb(3, 3, 58);
+  border-radius: 50px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.myList {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+#task-item {
+  padding-right: 10%;
+}
+
+.task:hover {
+  transform: scale(1.1);
 }
