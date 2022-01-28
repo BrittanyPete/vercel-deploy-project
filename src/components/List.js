@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import AddItem from './AddItem';
 import MyList from './MyList';
@@ -8,28 +8,47 @@ const list = [
         task: 'clean',
         id: 1,
         completed: false
+    },
+    {
+        task: 'cook',
+        id: 2,
+        completed: false
     }
 ]
 
-const List = () => {
-    const [myList, setMyList] = useState(list);
+class List extends React.Component {
+    constructor() {
+        super();
+        this.state= {
+            list: list
+        };
+    }
 
-    const handleAdd = (task) => {
+    handleClearFinished = () => {
+        this.setState({
+          ...this.state,
+          toDoList: this.state.toDoList.filter(item => {
+            return !item.completed;
+          })
+        });
+      }
+
+    handleAdd = (task) => {
         const newTask = {
-            item:task,
+            task:task,
             id: Date.now(),
             completed: false
         };
-        setMyList({
-            ...myList,
-            myList: [...this.state.myList, newTask]
+        this.setState({
+            ...this.state,
+            list: [...this.state.list, newTask]
         });
     }
 
-    const handleToggleTask = (selectedTask) => {
-        setMyList({
-            ...myList,
-            myList: this.state.myList.map(task => {
+    handleToggleTask = (selectedTask) => {
+        this.setState({
+            ...this.state,
+            list: this.state.list.map(task => {
                 if(task.id === selectedTask.id) {
                     return({
                         ...task,
@@ -42,12 +61,16 @@ const List = () => {
         })
     }
 
+    render() {
+
     return (
         <div>
             <h2>My List:</h2>
-            <AddItem handleAdd={handleAdd} />
-            <MyList myList={myList} handleToggleTask={handleToggleTask} />
+            <AddItem handleAdd={this.handleAdd} />
+            <MyList list={this.state.list} handleToggleTask={this.state.handleToggleTask} />
+            {/* <button onClick={this.handleClearFinished} className='clear-btn'>Clear Finished</button> */}
         </div>
     )
+}
 }
 export default List;
