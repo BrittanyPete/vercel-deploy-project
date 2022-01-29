@@ -18,7 +18,7 @@ const App = () => {
       <div>
       <Header />
       </div>
-      
+      <hr/>
 
       <div>
         <Switch>

@@ -30,6 +30,7 @@ class AddItem extends React.Component {
                     onChange={this.handleChange}
                     name='task'
                     type='text'
+                    placeholder='Enter New Task'
                     />
                     <button>Add Task</button>
                 </form>
