@@ -12,6 +12,7 @@ const Header = () => {
             <Link to='/list' className='link'>My List</Link>
         </div>
       </div>
+
     );
 }
 export default Header;
